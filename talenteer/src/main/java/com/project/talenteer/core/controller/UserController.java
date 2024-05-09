@@ -9,6 +9,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -20,6 +21,8 @@ import com.project.talenteer.core.service.UserService;
 import com.project.talenteer.core.utilities.result.DataResult;
 import com.project.talenteer.core.utilities.result.ErrorDataResult;
 import com.project.talenteer.core.utilities.result.SuccessDataResult;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/users")
@@ -35,7 +38,7 @@ public class UserController {
 
     @PostMapping("/add")
 	@ResponseStatus(code=HttpStatus.CREATED)
-	public ResponseEntity<?> add(User user){
+	public ResponseEntity<?> add(@Valid @RequestBody User user){
 		return ResponseEntity.ok(this.userService.add(user));
 	}
 	

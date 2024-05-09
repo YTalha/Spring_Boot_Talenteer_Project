@@ -1,10 +1,15 @@
 package com.project.talenteer.core.entity;
 
+import com.project.talenteer.model.entity.Contact;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -40,4 +45,9 @@ public class User {
 	@NotNull
 	@Column(name="kullanici_adi")
 	private String userName;
+	
+	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Contact contact;
+
+
 }
