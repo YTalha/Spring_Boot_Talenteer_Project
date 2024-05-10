@@ -44,19 +44,19 @@ public class Education {
     @Column(name="endEducationDate")
     private Date endEducationDate;
 
-    @Column(name="endEducationDate")
+    @Column(name="companyName")
     private String companyName;
 
-    @Column(name="endEducationDate")
+    @Column(name="companyPosition")
     private String companyPosition;
 
-    @Column(name="endEducationDate")
+    @Column(name="companyStatu")
     private String companyStatu;
 
-    @Column(name="endEducationDate")
+    @Column(name="startCompanyDate")
     private Date startCompanyDate;
 
-    @Column(name="endEducationDate")
+    @Column(name="endCompanyDate")
     private Date endCompanyDate;
 
     @JsonIgnore
