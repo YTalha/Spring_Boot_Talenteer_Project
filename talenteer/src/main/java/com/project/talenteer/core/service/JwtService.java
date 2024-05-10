@@ -14,6 +14,7 @@ public class JwtService {
 
     private static final String SECRET_KEY = "3e27faab4a9cbac3f2e4f598d07f3c3cda245d1e4e0ae28f96a7c1b021f389de";
 
+    
     public String generateToken(User user) {
         Claims claims = Jwts.claims().setSubject(user.getEmail());
         claims.put("id", user.getId());
