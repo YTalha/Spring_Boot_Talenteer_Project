@@ -1,6 +1,7 @@
 package com.project.talenteer.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.project.talenteer.core.utilities.result.DataResult;
 import com.project.talenteer.model.entity.Career;
@@ -8,6 +9,7 @@ import com.project.talenteer.repository.CareerRepository;
 import com.project.talenteer.service.CareerService;
 import com.project.talenteer.core.utilities.result.SuccessDataResult;
 
+@Service
 public class CareerServiceImpl implements CareerService{
 
     private final CareerRepository careerRepository;
