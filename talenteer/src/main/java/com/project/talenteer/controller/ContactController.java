@@ -2,7 +2,6 @@ package com.project.talenteer.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,11 +35,4 @@ public class ContactController {
     public DataResult<Contact> getContactById(@PathVariable int id) {
         return contactService.getContactById(id);
     }
-
-    @DeleteMapping("/{id}")
-    public DataResult<Void> deleteContact(@PathVariable int id) {
-        return contactService.deleteContact(id);
-    }
-
-
 }

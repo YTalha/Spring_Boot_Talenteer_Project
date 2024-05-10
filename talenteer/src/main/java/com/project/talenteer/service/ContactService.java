@@ -6,6 +6,5 @@ import com.project.talenteer.model.entity.Contact;
 public interface ContactService {
     DataResult<Contact> saveContact(Contact contact);
     DataResult<Contact> getContactById(int id);
-    DataResult<Void> deleteContact(int id);
 
 }
