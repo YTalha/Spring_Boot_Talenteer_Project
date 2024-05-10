@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.project.talenteer.core.entity.User;
 import com.project.talenteer.core.repository.UserRepository;
 import com.project.talenteer.core.utilities.result.DataResult;
+import com.project.talenteer.core.utilities.result.ErrorDataResult;
 import com.project.talenteer.core.utilities.result.SuccessDataResult;
 import com.project.talenteer.model.entity.Contact;
 import com.project.talenteer.repository.ContactRepository;
@@ -40,6 +41,21 @@ public class ContactServiceImpl implements ContactService{
     @Override
     public DataResult<Contact> getContactById(int id) {
         return new SuccessDataResult<>(contactRepository.findById(id).orElse(null));
+    }
+
+    @Override
+    public DataResult<Contact> getContactByUserId(int userId) {
+    User user = userRepository.findById(userId).orElse(null);
+    if (user == null) {
+        return new ErrorDataResult<>("User not found");
+    }
+
+    Contact contact = user.getContact();
+    if (contact == null) {
+        return new ErrorDataResult<>("Contact not found for user with id: " + userId);
+    }
+
+    return new SuccessDataResult<>(contact);
     }
 
 }

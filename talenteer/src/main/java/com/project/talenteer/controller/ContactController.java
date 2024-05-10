@@ -35,4 +35,10 @@ public class ContactController {
     public DataResult<Contact> getContactById(@PathVariable int id) {
         return contactService.getContactById(id);
     }
+
+    @GetMapping("/{userId}")
+    public DataResult<Contact> getContactByUserId(@PathVariable int userId) {
+    return contactService.getContactByUserId(userId);
+    }
+
 }
