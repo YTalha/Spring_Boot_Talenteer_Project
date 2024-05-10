@@ -28,7 +28,7 @@ public class CareerController {
         return careerService.saveCareer(career);
     }
 
-    @GetMapping("/user/{userId}")
+    @GetMapping("/careerUser/{userId}")
     public DataResult<Career> getCareerByUserId(@PathVariable int userId) {
         return careerService.getCareerByUserId(userId);
     }
