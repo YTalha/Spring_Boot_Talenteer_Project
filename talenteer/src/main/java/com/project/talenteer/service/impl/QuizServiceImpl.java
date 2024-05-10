@@ -2,6 +2,7 @@ package com.project.talenteer.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.talenteer.core.utilities.result.DataResult;
@@ -13,8 +14,9 @@ import com.project.talenteer.service.QuizService;
 @Service
 public class QuizServiceImpl implements QuizService{
 
-    private QuizRepository quizRepository;
+    private final QuizRepository quizRepository;
 
+    @Autowired
     public QuizServiceImpl(QuizRepository quizRepository){
         this.quizRepository = quizRepository;
     }

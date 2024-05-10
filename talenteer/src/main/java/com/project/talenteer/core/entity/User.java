@@ -1,5 +1,6 @@
 package com.project.talenteer.core.entity;
 
+import com.project.talenteer.model.entity.Career;
 import com.project.talenteer.model.entity.Contact;
 
 import jakarta.persistence.CascadeType;
@@ -48,6 +49,9 @@ public class User {
 	
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Contact contact;
+
+	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Career career;
 
 
 }
