@@ -43,6 +43,11 @@ public class Enum {
         AVRUPA,
         ABD
     }
+
+    public enum Rapor {
+        VAR,
+        YOK
+    }
     
 
 }
